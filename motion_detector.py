@@ -16,7 +16,7 @@ import tracking
 from tracking import Tracking
 
 def update(time):
-  print "Frame updated "
+  print ("Frame updated ")
   threading.Timer(time, update, (time,)).start()
   global firstFrame, tracking
   tracking.clean()
@@ -31,7 +31,7 @@ args = vars(ap.parse_args())
 firstFrame = None
 buffer = 32
 pts = deque(maxlen=buffer)
-print cv2.__version__
+print (cv2.__version__)
 counter = 0
 (dX, dY) = (0, 0)
 direction = ""
@@ -103,6 +103,6 @@ try:
     thread.start_new_thread(run, ())
 
 except:
-    print "Error: unable to start thread"
+    print ("Error: unable to start thread")
 while 1:
    pass
